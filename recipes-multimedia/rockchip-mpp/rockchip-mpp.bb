@@ -10,8 +10,8 @@ LIC_FILES_CHKSUM = " \
 
 inherit local-git
 
-SRCREV = "b29e4b798d28a5d0709bff87479d17f247645bc8"
-SRC_URI = "git://github.com/JeffyCN/mirrors.git;protocol=https;nobranch=1;branch=mpp-dev-2024_06_27;"
+SRCREV = "c79d520643433cd2d1643df465ed9efc1733d303"
+SRC_URI = "git://github.com/JeffyCN/mirrors.git;protocol=https;nobranch=1;branch=mpp-dev;"
 
 inherit pkgconfig cmake
 
@@ -19,6 +19,7 @@ EXTRA_OECMAKE = "     \
     -DRKPLATFORM=ON   \
     -DHAVE_DRM=ON     \
     -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+    -DBUILD_TEST=OFF \
 "
 
 CFLAGS:append = " -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"

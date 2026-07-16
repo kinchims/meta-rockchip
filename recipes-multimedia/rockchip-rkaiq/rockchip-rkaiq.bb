@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://NOTICE;md5=9645f39e9db895a4aa6e02cb57294595"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-PACKAGES:append = " ${PN}-server ${PN}-iqfiles"
+PACKAGES:append = " ${PN}-server ${PN}-iqfiles ${PN}-tuner "
 
 DEPENDS = "coreutils-native chrpath-replacement-native xxd-native rockchip-librga"
 RDEPENDS:${PN}-server = "${PN}"
@@ -64,7 +64,7 @@ do_install:append () {
 
 	# Drop unused tools
 	rm -rf ${D}/usr/etc ${D}/usr/usr ${D}/usr/bin/*demo \
-		${D}/usr/bin/rkaiq_tool_server ${D}/usr/bin/dumpcam
+	${D}/usr/bin/dumpcam
 
 	chrpath -d ${D}${libdir}/libsmartIr.so
 
@@ -94,6 +94,7 @@ FILES:${PN}-server = " \
 	${bindir}/rkaiq_3A_server \
 	${sysconfdir}/init.d/ \
 "
+FILES:${PN}-tuner = "${bindir}/rkaiq_tool_server"
 FILES:${PN}-iqfiles = "${sysconfdir}/iqfiles/"
 FILES:${PN} = " \
 	${libdir} \

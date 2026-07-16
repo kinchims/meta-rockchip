@@ -14,7 +14,7 @@ DEPENDS:append = " gstreamer1.0-plugins-base"
 
 inherit local-git
 
-SRCREV = "c37e7cf10283521c262f9e71fd9be0422a457989"
+SRCREV = "dcbcd6454ef892e385b3a782600369eb6c0719db"
 SRC_URI = "git://github.com/JeffyCN/mirrors.git;protocol=https;branch=gstreamer-rockchip;"
 
 PATCHPATH = "${THISDIR}/files"
